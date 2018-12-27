@@ -17,6 +17,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
+import com.example.contabilidade.validacao.Valor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,9 +29,9 @@ import lombok.ToString;
 @Entity
 @Table(name = "lancamento_contabil")
 @ToString
-@Getter
 @Builder
 @EqualsAndHashCode
+@Getter
 @NamedQueries({
 		@NamedQuery(name = "LancamentoContabil.filtroPorContaContabil", query = "SELECT"
 				+ " l FROM LancamentoContabil l WHERE l.contaContabil = :contaContabil"),
@@ -51,8 +54,9 @@ public class LancamentoContabil {
 	}
 
 	@Transient
+	@Getter(onMethod = @__( @JsonIgnore ))
 	private final String PADRAO_CONTA_CONTABIL = "[0-9]{7}";
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -69,6 +73,6 @@ public class LancamentoContabil {
 	private Date data;
 
 	@Setter
-	@NotNull(message = "{valor.notnull}")
+	@Valor(message = "{valor.invalido}")
 	private BigDecimal valor;
 }

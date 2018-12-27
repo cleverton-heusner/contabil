@@ -19,38 +19,47 @@
 	</properties>
 
 	<dependencies>
+	    <!-- Integra todas as dependencias necessarias para uso da 
+	         especificacao JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		
+		<!-- Reune componentes diversos para a estrutura de uma aplicacao Web, 
+		     como um conteiner embutido -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
+		<!-- Versionamento do esquema de um banco de dados -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
 
+		<!-- Banco de dados relacional -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		
+		<!-- Contem a maioria dos elementos requeridos para testes -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- Facilitador do uso de mocks em testes unitarios -->
 		<dependency>
 		    <groupId>org.mockito</groupId>
 		    <artifactId>mockito-core</artifactId>
 		</dependency>
 		
+		<!-- Reducao da verbosidade do Java -->
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>

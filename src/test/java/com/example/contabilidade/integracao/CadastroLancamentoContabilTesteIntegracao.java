@@ -105,11 +105,20 @@ public class CadastroLancamentoContabilTesteIntegracao {
 	}
 
 	@Test
+	public void deveriaFalharAoTentarCadastrarComValorZerado() {
+		lancamentoEsperadoPadrao.setValor(new BigDecimal(0.00));
+		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
+
+		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
+		assertThat("O valor não pode ser nulo ou zerado.", is(equalTo(obterMensagemDe(resposta))));
+	}
+
+	@Test
 	public void deveriaFalharAoTentarCadastrarComValorNulo() {
 		lancamentoEsperadoPadrao.setValor(null);
 		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
 
 		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
-		assertThat("Valor não informado.", is(equalTo(obterMensagemDe(resposta))));
+		assertThat("O valor não pode ser nulo ou zerado.", is(equalTo(obterMensagemDe(resposta))));
 	}
 }
