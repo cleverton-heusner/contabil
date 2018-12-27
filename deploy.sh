@@ -1,7 +1,9 @@
+CONFIG_APP=src/main/resources/application.properties
 numInstanciasApp=$([[ ! -z $1 ]] && echo $1 || echo 1)
 
-# Redireciona URL de conexao com banco do host para o respectivo conteiner.
-sed -i 's/localhost/contabil_bd/g' src/main/resources/application.properties
+# Redireciona URL e porta de conexao com banco no host para o respectivo conteiner.
+sed -i 's/localhost/contabil_bd/g' $CONFIG_APP
+sed -i 's/5433/5432/g' $CONFIG_APP
 
 # Limpa e atualiza build.
 ./mvnw clean && ./mvnw install

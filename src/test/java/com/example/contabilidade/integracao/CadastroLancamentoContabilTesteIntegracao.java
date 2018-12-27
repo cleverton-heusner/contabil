@@ -63,12 +63,14 @@ public class CadastroLancamentoContabilTesteIntegracao {
 	@Test
 	public void deveriaFalharAoTentarCadastrarComContaInvalida() {
 		lancamentoEsperadoPadrao.setContaContabil(CONTA_CONTABIL_INVALIDA);
-
-		ResponseEntity<List> resposta = restTemplate.postForEntity(URL_LANCAMENTOS_CONTABEIS, lancamentoEsperadoPadrao,
-				List.class);
+		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
 
 		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
 		assertThat("A conta contábil deve ter 7 dígitos.", is(equalTo(obterMensagemDe(resposta))));
+	}
+
+	private ResponseEntity<List> requisitarCadastroLancamentoInvalido() {
+		return restTemplate.postForEntity(URL_LANCAMENTOS_CONTABEIS, lancamentoEsperadoPadrao, List.class);
 	}
 
 	private String obterMensagemDe(ResponseEntity<List> resposta) {
@@ -78,9 +80,7 @@ public class CadastroLancamentoContabilTesteIntegracao {
 	@Test
 	public void deveriaFalharAoTentarCadastrarComContaNula() {
 		lancamentoEsperadoPadrao.setContaContabil(null);
-
-		ResponseEntity<List> resposta = restTemplate.postForEntity(URL_LANCAMENTOS_CONTABEIS, lancamentoEsperadoPadrao,
-				List.class);
+		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
 
 		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
 		assertThat("Conta contábil não informada.", is(equalTo(obterMensagemDe(resposta))));
@@ -89,9 +89,7 @@ public class CadastroLancamentoContabilTesteIntegracao {
 	@Test
 	public void deveriaFalharAoTentarCadastrarComDataDeAmanha() {
 		lancamentoEsperadoPadrao.setData(data.amanha());
-
-		ResponseEntity<List> resposta = restTemplate.postForEntity(URL_LANCAMENTOS_CONTABEIS, lancamentoEsperadoPadrao,
-				List.class);
+		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
 
 		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
 		assertThat("A data informada não deve exceder a atual.", is(equalTo(obterMensagemDe(resposta))));
@@ -100,9 +98,7 @@ public class CadastroLancamentoContabilTesteIntegracao {
 	@Test
 	public void deveriaFalharAoTentarCadastrarComDataNula() {
 		lancamentoEsperadoPadrao.setData(null);
-
-		ResponseEntity<List> resposta = restTemplate.postForEntity(URL_LANCAMENTOS_CONTABEIS, lancamentoEsperadoPadrao,
-				List.class);
+		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
 
 		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
 		assertThat("Data não informada.", is(equalTo(obterMensagemDe(resposta))));
@@ -111,9 +107,7 @@ public class CadastroLancamentoContabilTesteIntegracao {
 	@Test
 	public void deveriaFalharAoTentarCadastrarComValorNulo() {
 		lancamentoEsperadoPadrao.setValor(null);
-
-		ResponseEntity<List> resposta = restTemplate.postForEntity(URL_LANCAMENTOS_CONTABEIS, lancamentoEsperadoPadrao,
-				List.class);
+		ResponseEntity<List> resposta = requisitarCadastroLancamentoInvalido();
 
 		assertThat(HttpStatus.BAD_REQUEST, is(equalTo(resposta.getStatusCode())));
 		assertThat("Valor não informado.", is(equalTo(obterMensagemDe(resposta))));
