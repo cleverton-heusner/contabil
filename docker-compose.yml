@@ -3,13 +3,6 @@ services:
   contabil_bd:
     restart: always
     image: postgres:9.6
-    #deploy:
-    #  replicas: 1
-    #  update_config:
-    #    parallelism: 1
-    #    delay: 10s
-    #  restart_policy:
-    #    condition: on-failure
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=srbarri31
@@ -25,15 +18,6 @@ services:
     image: contabil_app:latest            
     depends_on:
       - contabil_bd
-    #deploy:
-    #  replicas: 2
-    #  update_config:
-    #    parallelism: 2
-    #    delay: 10s
-    #  placement:
-    #    constraints: [node.role == manager]  
-    #  restart_policy:
-    #    condition: on-failure  
     networks:
       - contabil_network
     ports:
