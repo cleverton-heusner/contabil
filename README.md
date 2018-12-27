@@ -30,7 +30,9 @@ Microsserviço destinado à gerência de lançamentos contábeis.
    git clone https://github.com/cleverton-heusner/contabil.git  
    ```
 2. No Spring Tool Suite, importe o repositório baixado como um projeto maven;
+
 3. Caso a sua IDE já esteja integrada à dependência Project Lombok, pule para o passo 4. Do contrário, siga as instruções no link https://projectlombok.org/setup/eclipse;
+
 4. Na raíz do projeto, digite o comando abaixo, em que 2 representa o número de instâncias desejadas da aplicação:
    ```bash
    ./instalar 2
