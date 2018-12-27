@@ -3,19 +3,19 @@
 ## Introdução
 API comprometida a entregar para GPSs as necessidades mais comuns de geolocalização.    
 
-## Tecnologias envolvidas
-* [PostgreSQL](https://www.postgresql.org/) - Banco que armazenará os POIs ou Pontos de Interesse;
-* [Docker](https://www.docker.com/) - Alternativa leve às máquinas virtuais. Facilitou a instalação, execução e configuração do PostgreSQL envolvendo-o em um contêiner;
-* [Docker Compose](https://docs.docker.com/compose/) - Auxilia o Docker, evitando que múltiplos contêineres sejam gerenciados separadamente. A administração é simplificada mesmo com apenas um contêiner;
-* [Eclipse Ogygen](https://www.eclipse.org/oxygen/) - IDE utilizada no projeto;
-* [Gradle](https://gradle.org/) - Gerenciador famoso de dependências e builds. Possibilitou todos os passos envolvidos no deploy da aplicação com um único comando;
-* [Postman](https://www.getpostman.com/) - Cliente HTTP utilizado para os testes de caixa preta nos serviços;
-* [Spark Framework](http://sparkjava.com/) - Framework RESTful para rápido desenvolvimento. Permite testes de API produdivos, pois traz o Jetty embutido, Servlet Container bastante leve;
-* [JUnit](https://junit.org/junit5/) - Ferramenta usada nos testes automatizados de API;
-* [Hibernate](http://hibernate.org/) - Framework de persistência ORM;
-* [Weld](http://weld.cdi-spec.org/) - Implementação de referência da tecnologia CDI, injeção de dependências tanto em Java EE quando Java SE;
+## Principais tecnologias envolvidas
+* [Spring Boot](http://spring.io/projects/spring-boot/) - Fácil configuração de uma aplicação baseada em Spring;
+* [PostgreSQL](https://www.postgresql.org/) - Banco relacional que armazenará os lançamentos contábeis;
+* [Docker](https://www.docker.com/) - Embutindo as dependências de uma aplicação em um contêiner, facilita a execução e o deploy da mesma em ambientes diversos;
+* [Docker Compose](https://docs.docker.com/compose/) - Complementar ao Docker, permite que múltiplos contêineres sejam gerenciados ao mesmo tempo;
+* [Spring Tool Suite](https://spring.io/tools/) - IDE sob medida para aplicações baseadas em Spring;
+* [JPA](https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html) - Especificação ORM, implementada neste projeto pelo Hibernate;
+* [Bean Validation](https://beanvalidation.org/) - Validação de beans por meio de metadados com suporte à customização.
+* [JUnit](https://junit.org/junit5/) - Ferramenta adotada para confecção de testes unitários e de integração;
+* [Project Lombok](https://projectlombok.org/) - Redução da verbosidade do Java através da substituição de código repetitivo por metadados;
+* [Mockito](https://site.mockito.org/) - Facilitador do uso de mocks em testes unitários;
 * [Bean Validation](http://beanvalidation.org/) - Validação de beans por meio de simples anotações e com suporte à internacionalização;
-* [REST Assured](http://rest-assured.io/) - Cliente para testar APIs em Java. Seu diferencial é uma DSL que descreve a requisição e a resposta de um endpoint de forma expressiva.
+* [Flyway](https://flywaydb.org/) - Versionamento do esquema de um banco de dados.
 
 ## Serviços
 * Cadastro de POIs (Pontos de Interesse):
