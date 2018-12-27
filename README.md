@@ -16,14 +16,18 @@ Microsserviço destinado à gerência de lançamentos contábeis.
 * [Mockito](https://site.mockito.org/) - Facilitador do uso de mocks em testes unitários;
 * [Flyway](https://flywaydb.org/) - Versionamento do esquema de um banco de dados.
 
-## Serviços
-* Cadastro de POIs (Pontos de Interesse):
-  + POST http://xy-inc.com/ponto
-* Consulta de POIs cadastrados:
-  + GET http://xy-inc.com/ponto
-* Consulta POIs mais próximos de um PGS respeitando uma distância máxima. Os parâmetros x e y se referem à localização do GPS e d-max representa a distância máxima.
-  + GET http://xy-inc.com/ponto/mais-proximos?x=1&y=2&d-max
-
+## Recursos
+* Listagem de lançamentos contábeis:
+  + GET /lancamentos-contabeis  
+* Busca de lançamento contábil por id:
+  + GET /lancamentos-contabeis/{id}
+* Filtragem de lançamentos contábeis por conta contábil:
+  + GET /lancamentos-contabeis/por-conta-contabil
+* Exibição de estatísticas dos lançamentos contábeis cadastrados:  
+  + GET /lancamentos-contabeis/estatisticas
+* Cadastro de lançamento contábil:  
+  + POST /lancamentos-contabeis
+  
 ## Instalando   
 1. Baixe o repositório remoto do projeto para sua máquina com o comando:
    ```bash
