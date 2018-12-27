@@ -41,7 +41,11 @@ Microsserviço destinado à gerência de lançamentos contábeis.
    ```bash
    ./instalar 2
    ```
-5. A aplicação deverá estar pronta para escutar requisições na porta **9999**. Para cadastrar um lançamento contábil, envie para a URL http://localhost:9999/lancamentos-contabeis uma requisição **POST** contendo o seguinte JSON:
+5. Após as instâncias da aplicação terem sido inicializadas, basta descobrir a porta de acesso escolhida para cada uma. Para tal, execute o comando que segue:
+   ```bash
+   docker ps
+   ```
+6. Supondo que uma das portas escolhidas seja **9999**, é o momento de enviar requisições. Para cadastrar um lançamento contábil, envie para a URL http://localhost:9999/lancamentos-contabeis uma requisição **POST** contendo o seguinte JSON:
    ```json
    {
      "contaContabil": "1234567",
