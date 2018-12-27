@@ -1,7 +1,7 @@
-# xy-inc
+# Contábil
 
 ## Introdução
-API comprometida a entregar para GPSs as necessidades mais comuns de geolocalização.    
+Microsserviço destinado à gerência de lançamentos contábeis.    
 
 ## Principais tecnologias envolvidas
 * [Spring Boot](http://spring.io/projects/spring-boot/) - Fácil configuração de uma aplicação baseada em Spring;
@@ -10,11 +10,10 @@ API comprometida a entregar para GPSs as necessidades mais comuns de geolocaliza
 * [Docker Compose](https://docs.docker.com/compose/) - Complementar ao Docker, permite que múltiplos contêineres sejam gerenciados ao mesmo tempo;
 * [Spring Tool Suite](https://spring.io/tools/) - IDE sob medida para aplicações baseadas em Spring;
 * [JPA](https://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html) - Especificação ORM, implementada neste projeto pelo Hibernate;
-* [Bean Validation](https://beanvalidation.org/) - Validação de beans por meio de metadados com suporte à customização.
+* [Bean Validation](https://beanvalidation.org/) - Especificação para validação de beans de forma declarativa implementada pelo Hibernate Validator.
 * [JUnit](https://junit.org/junit5/) - Ferramenta adotada para confecção de testes unitários e de integração;
 * [Project Lombok](https://projectlombok.org/) - Redução da verbosidade do Java através da substituição de código repetitivo por metadados;
 * [Mockito](https://site.mockito.org/) - Facilitador do uso de mocks em testes unitários;
-* [Bean Validation](http://beanvalidation.org/) - Validação de beans por meio de simples anotações e com suporte à internacionalização;
 * [Flyway](https://flywaydb.org/) - Versionamento do esquema de um banco de dados.
 
 ## Serviços
